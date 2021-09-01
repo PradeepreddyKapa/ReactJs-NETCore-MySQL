@@ -20,4 +20,3 @@ PRIMARY KEY(EmployeeId)
 );
 insert into dbo.Employee(EmployeeName,Department,DateOfJoining,PhotoFileName)
 values                  ('Bob','IT','2021-06-21','anonymous.png');
-select * from dbo.Employee;
