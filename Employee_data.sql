@@ -1,22 +1,25 @@
-create database if not exists dbo;
-USE dbo;
-DROP TABLE IF EXISTS `dbo.Department`;
-GRANT ALL PRIVILEGES ON dbo.* to root@localhost;
-CREATE TABLE dbo.Department(
-  DepartmentId int AUTO_INCREMENT,
-  DepartmentName nvarchar(500),
-  PRIMARY KEY (DepartmentId)
+create database EmployeeDb;
+use EmployeeDb;
+create table Department
+(
+  DepartmentId int not null,
+  DepartmentName varchar(100) not null,
+  primary key (departmentId)
 );
-INSERT into dbo.Department (DepartmentName) VALUES ('IT');
-INSERT into dbo.Department (DepartmentName) VALUES ('Support');
-DROP TABLE IF EXISTS `Employee`;
-create table dbo.Employee(
-EmployeeId int AUTO_INCREMENT,
-EmployeeName nvarchar(500),
-Department nvarchar(500),
-DateOfJoining datetime,
-PhotoFileName nvarchar(500),
-PRIMARY KEY(EmployeeId)
+insert into Department values
+(1, 'sales' ),
+(2, 'finance' ),
+(3, 'IT' ),
+(4, 'HR' );
+create table Employee
+(
+  EmployeeId int not null,
+  EmployeeName varchar(100) not null,
+  DateofJoining date,
+  Department varchar(500) not null,
+  PhotoFileName varchar(500),
+  primary key (EmployeeId)
 );
-insert into dbo.Employee(EmployeeName,Department,DateOfJoining,PhotoFileName)
-values                  ('Bob','IT','2021-06-21','anonymous.png');
+insert into Employee values
+(1, 'Clark','2020-06-12','sales','anaonmous.PNG'),
+(2, 'raja', '2020-06-12','HR','raja.PNG');
